@@ -11,12 +11,20 @@
  * @returns {boolean} - True if the string is a palindrome, false otherwise.
  */
 function isPalindrome(str) {
-  str = str.split(" ").map((word => word.trim())).join("")
+  str = str.split(" ").map((word => word.trim().toLowerCase())).join("")
   if (str.length <= 1) 
     return true
   let left = 0
   let right = str.length - 1
   while (left < right) {
+    if (str[left] === " " || str[left].charCodeAt(0) < 97 || str[left].charCodeAt(0) > 122) {
+      left++
+      continue
+    }
+    if (str[right] === " "|| str[right].charCodeAt(0) < 97 || str[right].charCodeAt(0) > 122) {
+      right--
+      continue
+    }
     if (str[left] !== str[right])
       return false
     left++
