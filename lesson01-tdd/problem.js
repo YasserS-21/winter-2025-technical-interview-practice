@@ -11,6 +11,7 @@
  * @returns {boolean} - True if the string is a palindrome, false otherwise.
  */
 function isPalindrome(str) {
+  str = str.split(" ").map((word => word.trim())).join("")
   if (str.length <= 1) 
     return true
   let left = 0
