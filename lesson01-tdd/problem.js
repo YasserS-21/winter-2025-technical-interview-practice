@@ -11,6 +11,9 @@
  * @returns {boolean} - True if the string is a palindrome, false otherwise.
  */
 function isPalindrome(str) {
+  if (typeof str !== "string"){
+    throw new Error("Invalid input")
+  }
   str = str.split(" ").map((word => word.trim().toLowerCase())).join("")
   if (str.length <= 1) 
     return true

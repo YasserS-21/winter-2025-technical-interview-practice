@@ -36,4 +36,9 @@ describe('isPalindrome', () => {
     test('palindrome with numbers should work', () => {
         expect(isPalindrome('12321')).toBe(true);
     });
+
+    test('given a non-string throw an error', () => {
+        expect(() => isPalindrome([])).toThrow("Invalid input")
+    })
 });
+
