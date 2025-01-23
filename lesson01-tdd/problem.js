@@ -11,7 +11,11 @@
  * @returns {boolean} - True if the string is a palindrome, false otherwise.
  */
 function isPalindrome(str) {
+  if (str.length <= 1) 
+    return true
+  
   // your code here
+  
 }
 
 module.exports = isPalindrome;
