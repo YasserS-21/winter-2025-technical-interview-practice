@@ -12,7 +12,7 @@ text = "ababcababcabc"
 pattern = "abc"
 
 Output:
-[2, 7, 10, 13]
+[2, 7, 10]
 
 Input:
 text = "hello world"
@@ -31,6 +31,35 @@ function stringMatching(text, pattern) {
   // TODO: Implement the string matching algorithm
   // Return an array of indices where the pattern is found in the text
   // If the pattern is not found, return an empty array
-}
+// SOLUTION 1: nested loop O(n^2)
+  let result = []
+  for (let i = 0; i < text.length; i++) {
+    console.log(text, pattern, text[i], i)
+    if (text[i] === pattern[0]) {
+      let flag = true
+      for (let j = 1; j < pattern.length; j++) {
+        if (text[i + j] !== pattern[j]) {
+          flag = false
+        }
+      }
+      if (flag) {
+        result.push(i)
+      }
+    }
+  }
+  return result
 
+// SOLUTION 2:REGEX
+// if (!text.length || !pattern.length) return []
+
+// const regex = new RegExp(`${pattern}`, `g`);
+// let result = []
+// for (const match of text.matchAll(regex)){
+//   if (match.index) result.push(match.index)
+// }
+// return result
+
+// }
+
+console.log(stringMatching("ababcababcabc", "abc"));
 module.exports = stringMatching;
