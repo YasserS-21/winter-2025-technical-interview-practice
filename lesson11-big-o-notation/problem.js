@@ -4,7 +4,16 @@
  */
 
 function isLeapYear(year) {
-  // TODO: Implement the function
+  let divisibleBy4 = year % 4 == 0
+  let divisibleby100 = year%100 == 0
+  let divisibleBy400 = year%400 == 0
+  if (divisibleBy4 && !divisibleby100){
+    return true
+  }
+  if (divisibleBy400){
+    return true
+  }
+  return false 
 }
 
 module.exports = isLeapYear;
