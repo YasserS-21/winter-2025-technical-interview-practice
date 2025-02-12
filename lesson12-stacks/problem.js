@@ -11,19 +11,21 @@
     }
   
     push(item) {
-
+      this.items[this.items.length] = item
     }
   
     pop() {
-    
+      if (this.isEmpty()) return null
+      return this.items.splice(-1,1)[0]
     }
   
     peek() {
-      
+      if (this.isEmpty()) return null
+      return this.items[this.items.length-1] 
     }
   
     isEmpty() {
-      
+      return !this.items.length
     }
   }
   
